@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "AI DevOps Demo Application - Version 2"
+    return "AI DevOps Demo Application - Version 3"
 
 
 @app.route("/health")
