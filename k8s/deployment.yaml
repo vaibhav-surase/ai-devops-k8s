@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: ai-devops-k8s
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: ai-devops-k8s
+
+  template:
+    metadata:
+      labels:
+        app: ai-devops-k8s
+
+    spec:
+      containers:
+        - name: ai-devops-k8s
+
+          image: 470451076070.dkr.ecr.ap-south-1.amazonaws.com/ai-devops-k8s:1
+
+          ports:
+            - containerPort: 5000
+
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+
+            limits:
+              cpu: "500m"
+              memory: "512Mi"

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: ai-devops-k8s-service
+
+spec:
+  type: LoadBalancer
+
+  selector:
+    app: ai-devops-k8s
+
+  ports:
+    - port: 80
+      targetPort: 5000
